@@ -1,13 +1,11 @@
 SOURCEDIR := src
 BUILDDIR := build
 
+MODULES := list contact cli
+
 CC=gcc
 CFLAGS=-Wall -I$(SOURCEDIR)
 EXENAME=list
-
-MODULES := list \
-					 contact \
-					 cli
 
 MODOBJS := $(addprefix $(BUILDDIR)/,$(MODULES:=.o))
 
