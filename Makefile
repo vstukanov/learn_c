@@ -1,10 +1,11 @@
+INCDIR := inc
 SOURCEDIR := src
 BUILDDIR := build
 
-MODULES := list contact cli
+MODULES := list contact cli utils
 
 CC=gcc
-CFLAGS=-Wall -I$(SOURCEDIR)
+CFLAGS=-Wall -I$(INCDIR)
 EXENAME=list
 
 MODOBJS := $(addprefix $(BUILDDIR)/,$(MODULES:=.o))
@@ -21,6 +22,9 @@ $(MODOBJS): | $(BUILDDIR)
 
 $(BUILDDIR):
 	mkdir $(BUILDDIR)
+
+run:
+	./list
 
 clean:
 	rm -rf $(BUILDDIR)
